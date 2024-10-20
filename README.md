@@ -14,3 +14,9 @@ In full disclosure I have never EVER touched infrastructure work like this befor
 * I've confirmed that this EC2 instance runs as expected by using another practice React app to make a request to this back end and render the very simple JSON object on screen.
 * The FastAPI app in this repo for now only has one route. I would next look into how to build a full web server that handles more complicated business logic. For now, I chose to focus on getting the app fully dockerized and provisioned on AWS because that was where I had no knowledge. I also have no knowledge of FastAPI, but using Python as a JSON web server is something that I'm more familiar with. Provisioning infrastructure like this was completely alien to me until just now. It still is very alien to me, but at least I know what to look for in an infrastructure.
 * Obviously this is a very small app that has straightforward business logic (it just responds to a single get request with a single JSON oobject). But I'd love to learn more about how else to expand the infrastructure network and know more about how else we can take advantage of infrastructure-as-code.
+* One thing that's missing from the `main.tf` config file is that upon running `terraform apply`, the EC2 instance is created, and docker is successfully installed, but I couldn't get the container to pull the image from Docker Hub upon launch so I had to SSH into it manually and pull it.
+
+## Works Cited
+* [HashiCorp Tutorial](https://developer.hashicorp.com/terraform/tutorials/aws-get-started) for AWS Terraform provisioning
+* [AWS Docs](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-connect-prerequisites.html?icmpid=docs_ec2_console#ec2-instance-connect-setup-security-group) to figure out SSH issues and launching
+* ChatGPT to walk me through orchestrating FastAPI, Docker, and Terraform
