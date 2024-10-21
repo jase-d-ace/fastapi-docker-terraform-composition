@@ -1,7 +1,6 @@
 # FastAPI + Docker + Terraform
 This repo holds a practice infrastructure app where a very, VERY simple FastAPI server that only serves a single json object on `"/"` is dockerized via the `Dockerfile` and then provisioned with AWS EC2 resources via a Terraform configuration in `main.tf`
 
-In full disclosure I have never EVER touched infrastructure work like this before and am using a combination of HashiCorp tutorials, Docker documentation, and a healthy side of ChatGPT to put this barebones app together.
 
 ## What I've learned from all of my research
 * FastAPI is very lightweight and can be quickly configured and written to serve JSON and uses the query string to manage route parameters just like Django does. Run a FastAPI app using `fastapi dev path/to/main.py
